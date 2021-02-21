@@ -22,7 +22,7 @@ func getDog() (string, error) {
 	}
 
 	if err := json.NewDecoder(resp.Body).Decode(&dog); err != nil {
-		log.Printf("could not decode incoming dog %s", err.Error())
+		log.Printf("could not decode incoming dog %s\n", err.Error())
 		return "", err
 	}
 	defer resp.Body.Close()

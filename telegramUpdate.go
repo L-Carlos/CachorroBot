@@ -27,7 +27,7 @@ type Chat struct {
 func decodeUpdate(r *http.Request) (*Update, error) {
 	var update Update
 	if err := json.NewDecoder(r.Body).Decode(&update); err != nil {
-		log.Printf("Could not decode update: %s", err.Error())
+		log.Printf("Could not decode update: %s\n", err.Error())
 		return nil, err
 	}
 	return &update, nil
